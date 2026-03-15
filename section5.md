@@ -6,20 +6,20 @@
 ## 5.2. Графічне представлення (UML Use Case)
 
 ```mermaid
-useCaseDiagram
-    actor "Мешканець міста" as User
-    actor "Еколог-аналітик" as Eco
-    actor "Адміністратор" as Admin
-    actor "Мережа IoT-датчиків" as Sensor
+graph LR
+    User((Мешканець міста))
+    Eco((Еколог-аналітик))
+    Admin((Адміністратор))
+    Sensor((IoT-датчик))
 
-    package "Платформа EcoSmart City" {
-        usecase "Моніторинг карти в реальному часі" as UC1
-        usecase "Налаштування push-сповіщень" as UC2
-        usecase "Аналіз історичних даних та трендів" as UC3
-        usecase "Генерація аналітичної звітності" as UC4
-        usecase "Керування конфігурацією пристроїв" as UC5
-        usecase "Передача телеметрії" as UC6
-    }
+    subgraph "Платформа EcoSmart City"
+        UC1(Моніторинг карти)
+        UC2(Налаштування сповіщень)
+        UC3(Аналіз трендів)
+        UC4(Генерація звітів)
+        UC5(Керування пристроями)
+        UC6(Передача телеметрії)
+    end
 
     User --> UC1
     User --> UC2
